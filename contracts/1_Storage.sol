@@ -14,21 +14,16 @@ import "./stringUtils.sol";
  
 contract Storage {
 
-    string student_id;
+    // string student_id;
 
-    function store(string memory str_inp) public {
-        student_id = str_inp;
+    mapping (string => string) students;
+
+    function store(string memory student_name, string memory student_id) public {
+        students [student_id] = student_name;
     }
 
 
-    function retrieve() public view returns (string memory){
-        string memory my_id = "22101107";
-        string memory my_name = "Mehedi Hasan Tanvir";
-        string memory not_mine = "This is not your ID";
-        if (StringUtils.equal(student_id, my_id)) {
-            return my_name;
-        } else {
-            return not_mine;
-        }
+    function retrieve(string memory student_id) public view returns (string memory){
+        return students[student_id];
     }
 }

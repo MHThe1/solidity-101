@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "student_id",
+						"type": "string"
+					}
+				],
 				"name": "retrieve",
 				"outputs": [
 					{
@@ -22,7 +28,12 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "str_inp",
+						"name": "student_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "student_id",
 						"type": "string"
 					}
 				],
@@ -63,11 +74,11 @@
 	},
 	"sources": {
 		"contracts/1_Storage.sol": {
-			"keccak256": "0x8e7bbeab0fa9c78314727e6ea49cc21960d789c7c2a86f82781183660d0ac01e",
+			"keccak256": "0xc8e56d9be34fda15dda7da08c0defbc2374e5727404a80efe3c9fa62002a4232",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://715e84fec55e2381fe0f768d62c17fe47a453f23c6765188ef9ff8bec70ea5db",
-				"dweb:/ipfs/QmbkHzxZD6vSrJaMCurPz9seVNjHKT9cVTbtKGGpxZdf2A"
+				"bzz-raw://5757b7694db2eec3932d9f389b542e81dc27f23c9cc300c48f9909d597bd9b4c",
+				"dweb:/ipfs/Qmcs2MDsLnVaQ372PduEV6TyZQVFQFWaAEtv7aY79gxqUg"
 			]
 		},
 		"contracts/stringUtils.sol": {
