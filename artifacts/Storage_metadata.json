@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "str_inp",
+						"type": "string"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:dev-run-script": "./scripts/deploy_with_ethers.ts",
+			"details": "Store & retrieve value in a variable",
+			"kind": "dev",
+			"methods": {},
+			"title": "Storage",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/1_Storage.sol": "Storage"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/1_Storage.sol": {
+			"keccak256": "0x8e7bbeab0fa9c78314727e6ea49cc21960d789c7c2a86f82781183660d0ac01e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://715e84fec55e2381fe0f768d62c17fe47a453f23c6765188ef9ff8bec70ea5db",
+				"dweb:/ipfs/QmbkHzxZD6vSrJaMCurPz9seVNjHKT9cVTbtKGGpxZdf2A"
+			]
+		},
+		"contracts/stringUtils.sol": {
+			"keccak256": "0xb0b8112b3761454eb51195cec19d78245c5f00b8836f077c7998ca919c721149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb3b964a011727f3f0a972799c28f095fa42874dfeb40449a9a0ab97c4575e15",
+				"dweb:/ipfs/QmcQUqx8Nqt66n88BdqLp5B9icsdckD4dxU4ammjkquhSM"
+			]
+		}
+	},
+	"version": 1
+}
