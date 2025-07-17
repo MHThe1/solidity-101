@@ -14,16 +14,23 @@ import "./stringUtils.sol";
  
 contract Storage {
 
-    // string student_id;
-
-    mapping (string => string) students;
-
-    function store(string memory student_name, string memory student_id) public {
-        students [student_id] = student_name;
+    struct Student {
+        // gpa: string, semesterName: string, studentID:uint, courseTaken: uint
+        string gpa;
+        string semesterName;
+        uint studentID;
+        uint courseTaken;
     }
 
+    Student[] semesterData;
 
-    function retrieve(string memory student_id) public view returns (string memory){
-        return students[student_id];
-    }
+  function addStudent(string memory _gpa, string memory semesterName, uint256 _studentID, uint _courseTaken ) public {
+       Student memory newStudentSem = Student( _gpa, semesterName, _studentID, _courseTaken );
+       semesterData.push( newStudentSem );
+  }
+
+   function getStudents() public view returns(Student[] memory){
+       return semesterData;
+
+   }
 }

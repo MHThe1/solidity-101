@@ -9,37 +9,63 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "student_id",
-						"type": "string"
-					}
-				],
-				"name": "retrieve",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "student_name",
+						"name": "_gpa",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "student_id",
+						"name": "semesterName",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_studentID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_courseTaken",
+						"type": "uint256"
 					}
 				],
-				"name": "store",
+				"name": "addStudent",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStudents",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "gpa",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "semesterName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "studentID",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "courseTaken",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Storage.Student[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -74,11 +100,11 @@
 	},
 	"sources": {
 		"contracts/1_Storage.sol": {
-			"keccak256": "0xc8e56d9be34fda15dda7da08c0defbc2374e5727404a80efe3c9fa62002a4232",
+			"keccak256": "0x0b43bd08b1aba18f61c27c96360c60a1ce5d252887cd667aa0f552bf1bad42c4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5757b7694db2eec3932d9f389b542e81dc27f23c9cc300c48f9909d597bd9b4c",
-				"dweb:/ipfs/Qmcs2MDsLnVaQ372PduEV6TyZQVFQFWaAEtv7aY79gxqUg"
+				"bzz-raw://4fb9f7f55a7f96728270a8605f23123c49239b91c808afa50e83dacd29d0e852",
+				"dweb:/ipfs/QmNNeg5Mb1i579Dy9mpBgnpVBVnG9vg4pRSSqRQznBjYRt"
 			]
 		},
 		"contracts/stringUtils.sol": {
