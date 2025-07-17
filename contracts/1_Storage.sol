@@ -14,23 +14,21 @@ import "./stringUtils.sol";
  
 contract Storage {
 
-    struct Student {
-        // gpa: string, semesterName: string, studentID:uint, courseTaken: uint
-        string gpa;
-        string semesterName;
-        uint studentID;
-        uint courseTaken;
+    uint student_id;
+
+    function store(uint256 id) public {
+        student_id = id;
     }
 
-    Student[] semesterData;
 
-  function addStudent(string memory _gpa, string memory semesterName, uint256 _studentID, uint _courseTaken ) public {
-       Student memory newStudentSem = Student( _gpa, semesterName, _studentID, _courseTaken );
-       semesterData.push( newStudentSem );
-  }
-
-   function getStudents() public view returns(Student[] memory){
-       return semesterData;
-
-   }
+    function retrieve() public view returns (string memory){
+        uint last_two = (student_id % 100);
+        string memory my_name = "Mehedi Hasan Tanvir";
+        string memory not_mine = "Not found!";
+        if (student_id % last_two == 0) {
+            return my_name;
+        } else {
+            return not_mine;
+        }
+    }
 }
