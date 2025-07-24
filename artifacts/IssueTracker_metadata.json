@@ -1,0 +1,124 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_issueId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_status",
+						"type": "string"
+					}
+				],
+				"name": "addIssue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "issueList",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "issueId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_issueId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_newStatus",
+						"type": "string"
+					}
+				],
+				"name": "updateIssueStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/1_Storage.sol": "IssueTracker"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/1_Storage.sol": {
+			"keccak256": "0x32674a04a739af8fa5607c615f0a860aab73dcf5c2df8b66f8b5823d7f0a127a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8284a080dd2b5e6b9cc73b748d7eda8d3cc786bb75c29d6abf77ab1c66bab343",
+				"dweb:/ipfs/QmUcXDyfK127arwDPGF8ucWtpyH9LmLwSTkyyZgjFENCxi"
+			]
+		},
+		"contracts/stringUtils.sol": {
+			"keccak256": "0xb0b8112b3761454eb51195cec19d78245c5f00b8836f077c7998ca919c721149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb3b964a011727f3f0a972799c28f095fa42874dfeb40449a9a0ab97c4575e15",
+				"dweb:/ipfs/QmcQUqx8Nqt66n88BdqLp5B9icsdckD4dxU4ammjkquhSM"
+			]
+		}
+	},
+	"version": 1
+}

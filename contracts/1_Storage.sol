@@ -4,31 +4,50 @@ pragma solidity >=0.8.2 <0.9.0;
 
 import "./stringUtils.sol";
 
-/**
- * @title Storage
- * @dev Store & retrieve value in a variable
- * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
- */
+contract IssueTracker {
 
-
- 
-contract Storage {
-
-    uint student_id;
-
-    function store(uint256 id) public {
-        student_id = id;
+    struct Issue {
+        uint issueId;
+        string description;
+        string status;
     }
 
+    mapping(uint => Issue) public issueList;
 
-    function retrieve() public view returns (string memory){
-        uint last_two = (student_id % 100);
-        string memory my_name = "Mehedi Hasan Tanvir";
-        string memory not_mine = "Not found!";
-        if (student_id % last_two == 0) {
-            return my_name;
+    function addIssue(uint _issueId, string memory _description, string memory _status) public {
+        Issue memory newIssue = Issue({
+            issueId: _issueId,
+            description: _description,
+            status: _status
+        });
+
+        issueList[_issueId] = newIssue;
+    }
+
+    function updateIssueStatus(uint _issueId, string memory _newStatus) public {
+        Issue storage issue = issueList[_issueId];
+
+        require(bytes(issue.description).length != 0, "Issue does not exist");
+
+        string memory currentStatus = issue.status;
+
+        if (
+            StringUtils.equal(currentStatus, "ACTIVE") &&
+            StringUtils.equal(_newStatus, "IN_PROGRESS")
+        ) {
+            issue.status = _newStatus;
+        } else if (
+            StringUtils.equal(currentStatus, "IN_PROGRESS") &&
+            StringUtils.equal(_newStatus, "COMPLETE")
+        ) {
+            issue.status = _newStatus;
+        } else if (
+            StringUtils.equal(currentStatus, "COMPLETE") &&
+            StringUtils.equal(_newStatus, "CLOSED")
+        ) {
+            issue.status = _newStatus;
         } else {
-            return not_mine;
+            revert("Invalid status transition");
         }
     }
 }
